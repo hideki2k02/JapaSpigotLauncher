@@ -1,0 +1,2 @@
+# JapaSmartSpigotLauncher
+ To be filled
