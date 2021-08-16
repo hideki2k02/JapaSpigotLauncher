@@ -1,0 +1,18 @@
+[general]
+debug_mode = true
+graphics_mode = false
+# If the server closes or the JAR crashes, will pause the prompt instead of closing it immediately
+pause_on_jar_closure = true
+# Both Initial and Max Allocation are in MB (256MB of RAM)
+java_initial_allocation_xms = 256
+java_max_allocation_xmx = 1536
+# Both will be overrided if "paper_auto_upgrade" is enabled
+use_last_jar_found = true
+jar_preffix = "paper"
+
+[paper_auto_upgrade]
+# If enabled, the program will automatically download the latest JAR for the specified version.
+# Program will also use "paper-latest.jar" instead of the JAR found by the preffix.
+enabled = false
+spigot_version = "1.17.1"
+latest_file_name = "paper-latest"

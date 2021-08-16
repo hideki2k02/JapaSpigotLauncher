@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Qr6RIv9K5BWRk8oAi3NuhcsW06wTaLqk65Pl/HSO3wJk8NYAW1LbhoytRPCR3m/go5zENmjzeA2GE6T8svGO4g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\japa4551\\Documents\\Codes\\GitHub\\JapaSpigotLauncher\\JapaSpigotLauncher.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\japa4551\\.nuget\\packages\\tommy\\3.0.1\\tommy.3.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -8,3 +8,7 @@ This is a small tool that i made ~~because im lazy and i have too much free time
 - Instead of having multiple BATCH files that you have to edit every time you download a new JAR (unless you rename the JAR or you use Terminal) you can use this tool to launch your server.
 - If you use Spigot, the program also automatically updates the JAR for you (can be toggled).
 - Launch JARs dynamically based on preffix.
+
+## Libraries used 
+[https://www.nuget.org/packages/Tommy]Tommy 3.0.1 by dezhidki
+

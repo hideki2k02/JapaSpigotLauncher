@@ -1,0 +1,117 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "Tommy/3.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Tommy.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Tommy.dll": {}
+        }
+      }
+    },
+    "net5.0/win-x86": {
+      "Tommy/3.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Tommy.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Tommy.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Tommy/3.0.1": {
+      "sha512": "4UtdTKC3JUgCuEB5BC9ypUSdtmLjBxhQmlqp5JtathkCniE9ywIAZMUtjlwGOdtrQ7YR5cM0+20eC0E4qNmUIg==",
+      "type": "package",
+      "path": "tommy/3.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/net35/Tommy.dll",
+        "lib/netstandard2.0/Tommy.dll",
+        "tommy.3.0.1.nupkg.sha512",
+        "tommy.nuspec",
+        "tommy_logo_icon.png"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "Tommy >= 3.0.1"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\japa4551\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\japa4551\\Documents\\Codes\\GitHub\\JapaSpigotLauncher\\JapaSpigotLauncher.csproj",
+      "projectName": "JapaSpigotLauncher",
+      "projectPath": "C:\\Users\\japa4551\\Documents\\Codes\\GitHub\\JapaSpigotLauncher\\JapaSpigotLauncher.csproj",
+      "packagesPath": "C:\\Users\\japa4551\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\japa4551\\Documents\\Codes\\GitHub\\JapaSpigotLauncher\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\japa4551\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "dependencies": {
+          "Tommy": {
+            "target": "Package",
+            "version": "[3.0.1, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+      }
+    },
+    "runtimes": {
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}
