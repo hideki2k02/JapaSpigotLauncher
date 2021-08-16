@@ -1,4 +1,6 @@
 # Japa's Spigot Launcher
+# [REQUIRES .NET Core Runtime/SDK 5.0](https://dotnet.microsoft.com/download/dotnet/5.0)
+
 **Disclaimer: You should be able to use any JAR like CraftBukkit, Spigot, Paper and BungeeCoord. The program is called Spigot Launcher just for convenience**
 **(any type of JAR should work, but JARs not meant for this program are strongly discouraged).**
 
@@ -10,5 +12,5 @@ This is a small tool that i made ~~because im lazy and i have too much free time
 - Launch JARs dynamically based on preffix.
 
 ## Libraries used 
-[https://www.nuget.org/packages/Tommy]Tommy 3.0.1 by dezhidki
-
+[Tommy3.0.1 by dezhidki](https://www.nuget.org/packages/Tommy]Tommy)
+[RickLibrary2160 2.0.21 by Revideo](https://youtu.be/m1yWUWhamj4)
