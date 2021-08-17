@@ -1,5 +1,6 @@
 bin
 .vscode
 build_and_run.bat
+build_and_release.bat
 Japa's Spigot Launcher v1.toml
 icon.png
