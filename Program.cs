@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using System.Collections.Generic;
+using System.Globalization;
 using System.Diagnostics;
 using System.Net;
 using System.Text.RegularExpressions;
@@ -11,9 +11,10 @@ namespace Japa_s_Smart_Paper_Spigot_Launcher
     class Program
     {
         public static string name = "Japa's Spigot Launcher";
-        public static int current_version = 1;
-        public static string title = $"{Program.name} v{current_version}";
-        public static string config_file = $"{Program.title}.toml";
+        public static double current_version = 1.1;
+        // Uses . instead of , on the current_version double
+        public static string title = $"{Program.name} v{Program.current_version.ToString("0.0", CultureInfo.InvariantCulture)}";
+        public static string config_file = $"{Program.name}.toml";
 
         static void Main()
         {
@@ -25,7 +26,7 @@ namespace Japa_s_Smart_Paper_Spigot_Launcher
 
                 Program.Generate_Config();
 
-                Console.WriteLine("Ok!");
+                Japa.WriteColorLine("<green|Ok!>");
             }
 
             else Console.WriteLine("Config file was found! loading...\n");
@@ -108,41 +109,34 @@ namespace Japa_s_Smart_Paper_Spigot_Launcher
 
                         MatchCollection regex = new Regex(@"\d+", RegexOptions.Multiline).Matches(res);
 
-                        if(!config["paper_auto_upgrade"]["current_version"].HasValue)
-                        {
-                            int version = Convert.ToInt16(regex[regex.Count - 1].Value);
-
-                            //Console.WriteLine("Current Version is null on config file!");
-                            //Console.WriteLine(version);
-
-                            config["paper_auto_upgrade"]["current_version"] = version;
-
-                            // Essentially same code as Generate_Config()
-
-                            using(StreamWriter writer = File.CreateText(config_file))
-                            {
-                                config.WriteTo(writer);
-                                writer.Flush();
-                            }
-                        }
-
                         int paper_current = config["paper_auto_upgrade"]["current_version"];
                         int paper_latest = Convert.ToInt16(regex[regex.Count - 1].Value);
                         string paper_file = $"{config["paper_auto_upgrade"]["latest_file_name"]}.jar";
+
+                        if(!config["paper_auto_upgrade"]["current_version"].HasValue)
+                        {
+                            //Console.WriteLine("Current Version is null on config file!");
+                            //Console.WriteLine(version);
+
+                            config["paper_auto_upgrade"]["current_version"] = paper_latest;
+                        }
 
                         //Console.WriteLine(current_version);
                         //Console.WriteLine(latest_version);
 
                         if(paper_current < paper_latest || !File.Exists(paper_file))
                         {
-                            if(File.Exists(config["paper_auto_upgrade"]["latest_file_name"])) 
+                            if(File.Exists(paper_file)) 
                             {
-                                Console.WriteLine($"Current Paper Version {current_version} is outdated!");
+                                Japa.WriteColorLine($"Current Paper Version (<green|{paper_current}>) is <red|outdated!>");
                             }
 
                             else Console.WriteLine("Paper file does not exist!");
                             
-                            Console.Write($"Downloading Latest Paper ({paper_latest}) for {mc_version} please wait... ");
+                            Japa.WriteColor($"Downloading Latest Paper <green|({paper_latest})> for <green|{mc_version}> please wait... ");
+
+                            config["paper_auto_upgrade"]["current_version"] = paper_latest;
+                            Program.Update_Config(config);
 
                             var web = new WebClient();
                             web.Proxy = null;
@@ -152,10 +146,12 @@ namespace Japa_s_Smart_Paper_Spigot_Launcher
 
                             web.DownloadFile(url, paper_file);
 
-                            Console.WriteLine("Ok!");
+                            Japa.WriteColorLine("<green|Ok!>");
                         }
 
                         else Console.WriteLine("Paper is up to date!");
+
+                        System.Threading.Thread.Sleep(1000);
                     }
 
                     catch(Exception err)
@@ -191,7 +187,15 @@ namespace Japa_s_Smart_Paper_Spigot_Launcher
 
             Console.Title = $"{Program.title} - {input}";
         }
-
+        static void Update_Config(TomlTable current_config)
+        {
+            // Essentially same code as Generate_Config()
+            using(StreamWriter writer = File.CreateText(Program.config_file))
+            {
+                current_config.WriteTo(writer);
+                writer.Flush();
+            }
+        }
         static void Generate_Config()
         {
             TomlTable toml = new TomlTable

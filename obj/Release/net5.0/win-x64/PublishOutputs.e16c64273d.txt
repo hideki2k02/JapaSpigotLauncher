@@ -1,0 +1,2 @@
+C:\Users\japa4551\Documents\Codes\GitHub\JapaSpigotLauncher\bin\Release\net5.0\win-x64\publish\JapaSpigotLauncher.pdb
+C:\Users\japa4551\Documents\Codes\GitHub\JapaSpigotLauncher\bin\Release\net5.0\win-x64\publish\JapaSpigotLauncher.exe
