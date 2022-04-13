@@ -1,4 +1,7 @@
 # Japa's Spigot Launcher
+
+# DISCONTINUED YOU SHOULD USE [SpigotLauncher.py](https://github.com/japa4551/SpigotLauncher.py) instead
+
 # [REQUIRES .NET Core Runtime/SDK 5.0](https://dotnet.microsoft.com/download/dotnet/5.0)
 
 **Disclaimer: You should be able to use any JAR like CraftBukkit, Spigot, Paper and BungeeCoord. The program is called Spigot Launcher just for convenience**
